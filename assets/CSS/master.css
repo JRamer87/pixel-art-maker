@@ -97,7 +97,10 @@ p{
   color: #1f1f1f;
   font: 400 16px/24px 'Bitter',times,serif;
 }
-
+small{
+  color: #5d5d5d;
+  font: 400 12px/18px 'Bitter',times,serif;
+}
 /*banner*/
 .banner h1,
 .banner h3{
@@ -113,10 +116,12 @@ main p {
 }
 /*grid*/
 #grid {
+  width: 900px;
   margin: 5px auto;
   display: flex;
   flex-flow: column;
   border: 1px solid black;
+  align-items: center;
 }
 .grid-row{
   display: flex;
@@ -193,4 +198,9 @@ main p {
 }
 .magenta{
   background: magenta;
+}
+
+/*footer*/
+footer{
+  padding: 5px 30px;
 }
