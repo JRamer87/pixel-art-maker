@@ -125,15 +125,15 @@ main p {
 }
 .grid-row{
   display: flex;
-  width: 100%
+	justify-content: center;
+  width: 100%;
 }
 .cellbase {
   display: block;
   width: 30px;
   height: 30px;
   border: .5px dotted grey;
-  position: relative;
-  top: 0;
+	position: relative;
   background: transparent;
 }
 .color-layer {
@@ -208,6 +208,10 @@ main p {
 .black{
   background: black;
 }
+.transparent{
+	background: transparent;
+	border: 1px solid #1f1f1f;
+}
 
 .blend-mode{
   /*opacity: .5;*/
@@ -217,4 +221,12 @@ main p {
 /*footer*/
 footer{
   padding: 5px 30px;
+}
+
+/*brush*/
+#brush {
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	display: none;
 }

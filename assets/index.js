@@ -45,6 +45,11 @@
 
   // append div with class of color name
   grid.addEventListener('click', () => addColorLayer())
-  
 
+  //pointer with fixed brush;
+  const brush = document.getElementById('brush')
+  grid.addEventListener('mousemove', () => {
+    event.shiftKey ? brush.className = 'transparent' : brush.className = currentColor;
+    brush.setAttribute('style',`display:block;position:fixed;left:${event.x}px;top:${event.y}px`)
+  })
 })();
