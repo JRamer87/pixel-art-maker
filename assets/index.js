@@ -26,8 +26,7 @@
     currentColor = event.target.classList[1];
   })
 
-  // append div with class of color name
-  grid.addEventListener('click', () => {
+  const addColorLayer = function () {
     if (event.shiftKey) {
       if(event.target.className.includes('cellbase')){
         return
@@ -37,9 +36,15 @@
 
     const newCell = document.createElement('div');
     newCell.className ='color-layer '+currentColor;
+    if (event.altKey) {
+      newCell.className += ' blend-mode'
+      console.log('check')
+    }
     event.target.appendChild(newCell);
+  }
 
-  })
-
+  // append div with class of color name
+  grid.addEventListener('click', () => addColorLayer())
+  
 
 })();

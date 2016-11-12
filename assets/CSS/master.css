@@ -129,9 +129,9 @@ main p {
 }
 .cellbase {
   display: block;
-  width: 20px;
-  height: 20px;
-  border: 1px dotted grey;
+  width: 30px;
+  height: 30px;
+  border: .5px dotted grey;
   position: relative;
   top: 0;
   background: transparent;
@@ -198,6 +198,20 @@ main p {
 }
 .magenta{
   background: magenta;
+}
+.white{
+  background: white;
+}
+.grey{
+  background: grey;
+}
+.black{
+  background: black;
+}
+
+.blend-mode{
+  /*opacity: .5;*/
+  mix-blend-mode: overlay;
 }
 
 /*footer*/
