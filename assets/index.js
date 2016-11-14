@@ -7,14 +7,13 @@
   const grid = document.getElementById('grid');
   const formY = document.getElementById('grid-y');
   const formX = document.getElementById('grid-x');
-
+  //resetting grid
   resetButton.addEventListener('click', () => {
+    //delete current grid, if any
     while (grid.children.length) {
       grid.removeChild(grid.firstElementChild);
     }
-
-    const widthCell = 99 / formX.value;
-
+    //generate grid given the dimensions
     for (let i = 0; i < formY.value; i++) {
       const newRow = document.createElement('div');
       newRow.className = 'grid-row';
@@ -54,19 +53,19 @@
 
   // function: appends/removes a layer of color
   const addColorLayer = function () {
-    if (!event.target.className.includes('top-layer')){
+    //GC: will only apply to the top-most layer of each cell & exclude
+    if (!event.target.className.includes('top-layer')) {
       return;
     }
-
+    //GC: will not add any color layers before choosing a color
     if (currentColor === undefined) {
       return;
     }
-
+    //enable 'undo' by deleting top-most layer; reassign class to parent after deletion
     if (event.shiftKey) {
-      if(event.target.className.includes('cellbase')){
+      if(event.target.className.includes('cellbase')) {
         return;
       }
-
       event.target.parentElement.className += ' top-layer';
       event.target.parentElement.removeChild(event.target);
       return;
@@ -81,8 +80,9 @@
 
     newCell.className += ' top-layer';
     event.target.className = event.target.className.slice(0, event.target.className.length - 10);
-
-    if (newCell.className.includes('custom-color')){
+    //by this point, class list of new color layer should be color-layer, (currentColor), (optional blend-mode), top-layer.
+    //the parent element (target) should have lost the top-layer class.
+    if (newCell.className.includes('custom-color')) {
       newCell.setAttribute('style', `background:${customColor}`);
     }
 
@@ -101,7 +101,7 @@
   let mouseisdown = false;
   let topLayerArr = [...document.getElementsByClassName('top-layer')];
   const reinitializeEnterArr = function () {
-    for (const cell of topLayerArr){
+    for (const cell of topLayerArr) {
       cell.addEventListener('mouseenter', () => {
         if (mouseisdown) {
           addColorLayer();
@@ -109,15 +109,14 @@
       })
     }
   }
-
   reinitializeEnterArr();
-
+  //boolean for whether mouse is up/down
   grid.addEventListener('mousedown', () => {
     mouseisdown = true;
   })
-
   document.addEventListener('mouseup', () => {
     mouseisdown = false;
+    //with "top-layer" changing constantly, this part redefines the target elements to apply mouseenter listeners for the newly added layers at each mouseup.
     topLayerArr = [...document.getElementsByClassName('top-layer')];
     reinitializeEnterArr();
   })
@@ -137,11 +136,11 @@
       brush.setAttribute('style', `display:block; left:${event.x}px; top:${event.y}px`);
     }
 
-    if (currentColor !== undefined){
+    if (currentColor !== undefined) {
       grid.setAttribute('style', 'cursor:none');
     }
   })
-
+  //above styles are only applied while the cursor is above the grid element; once it leaves the field it is deleted and hidden by returning to original display:none
   grid.addEventListener('mouseleave', () => {
     brush.removeAttribute('style');
   })
@@ -161,14 +160,14 @@
   // const gridToggle = document.getElementById('grid-toggle');
   // gridToggle.addEventListener('change', () => {
   //   console.log('h');
-  //   if (!event.target.checked){
+  //   if (!event.target.checked) {
   //     console.log('e');
-  //     for (const cell in [...document.getElementsByClassName('cellbase')]){
+  //     for (const cell in [...document.getElementsByClassName('cellbase')]) {
   //       cell.className = 'cellbase-gridless ' + cell.className;
   //       console.log('o');
   //     }
   //   } else {
-  //     for (const cell in [...document.getElementsByClassName('cellbase')]){
+  //     for (const cell in [...document.getElementsByClassName('cellbase')]) {
   //       cell.className.toggle('cellbase-gridless');
   //     }
   //   }
