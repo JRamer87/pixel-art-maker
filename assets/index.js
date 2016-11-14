@@ -7,19 +7,25 @@
   const grid = document.getElementById('grid');
   const formY = document.getElementById('grid-y');
   const formX = document.getElementById('grid-x');
+
   resetButton.addEventListener('click', () => {
     while (grid.children.length) {
       grid.removeChild(grid.firstElementChild);
     }
+
     const widthCell = 99 / formX.value;
+
     for (let i = 0; i < formY.value; i++) {
       const newRow = document.createElement('div');
       newRow.className = 'grid-row';
+
       for (let i = 0; i < formX.value; i++) {
         const newCell = document.createElement('div');
+
         if (formX.value > 30) {
           newCell.className ='small-cell ';
         }
+
         newCell.className += 'cellbase top-layer';
         newRow.appendChild(newCell);
       }
@@ -40,6 +46,7 @@
     if (event.target === palette) {
       return;
     }
+
     currentColor = event.target.classList[1];
     document.getElementById('current-color-box').removeAttribute('style');
     document.getElementById('current-color-box').className = currentColor;
@@ -50,33 +57,40 @@
     if (!event.target.className.includes('top-layer')){
       return;
     }
+
     if (currentColor === undefined) {
       return;
     }
+
     if (event.shiftKey) {
       if(event.target.className.includes('cellbase')){
         return;
       }
+
       event.target.parentElement.className += ' top-layer';
       event.target.parentElement.removeChild(event.target);
       return;
     }
 
     const newCell = document.createElement('div');
-    newCell.className ='color-layer '+currentColor;
+    newCell.className = 'color-layer ' + currentColor;
+
     if (event.altKey) {
       newCell.className += ' blend-mode';
     }
+
     newCell.className += ' top-layer';
     event.target.className = event.target.className.slice(0, event.target.className.length - 10);
+
     if (newCell.className.includes('custom-color')){
-      newCell.setAttribute('style',`background:${customColor}`);
+      newCell.setAttribute('style', `background:${customColor}`);
     }
+
     event.target.appendChild(newCell);
   }
 
   // click to draw
-  grid.addEventListener('click', () =>{
+  grid.addEventListener('click', () => {
     if (event.target === grid || event.target.className.includes('grid-row')) {
       return;
     }
@@ -95,10 +109,13 @@
       })
     }
   }
+
   reinitializeEnterArr();
+
   grid.addEventListener('mousedown', () => {
     mouseisdown = true;
   })
+
   document.addEventListener('mouseup', () => {
     mouseisdown = false;
     topLayerArr = [...document.getElementsByClassName('top-layer')];
@@ -108,13 +125,24 @@
   //cursor;
   const brush = document.getElementById('brush')
   grid.addEventListener('mousemove', () => {
-    event.shiftKey ? brush.className = 'transparent' : brush.className = currentColor;
-    currentColor === 'custom-color' ? brush.setAttribute('style',`display:block;left:${event.x}px;top:${event.y}px;background:${customColor}`) : brush.setAttribute('style',`display:block;left:${event.x}px;top:${event.y}px`);
+    if (event.shiftKey) {
+      brush.className = 'transparent';
+    } else {
+      brush.className = currentColor;
+    }
+
+    if (currentColor === 'custom-color') {
+      brush.setAttribute('style', `display:block; left:${event.x}px; top:${event.y}px; background:${customColor}`);
+    } else {
+      brush.setAttribute('style', `display:block; left:${event.x}px; top:${event.y}px`);
+    }
+
     if (currentColor !== undefined){
-      grid.setAttribute('style','cursor:none');
+      grid.setAttribute('style', 'cursor:none');
     }
   })
-  grid.addEventListener('mouseleave',() => {
+
+  grid.addEventListener('mouseleave', () => {
     brush.removeAttribute('style');
   })
 
@@ -124,11 +152,12 @@
   colorInput.addEventListener('change', () => {
     customColor = colorInput.value;
     currentColor = 'custom-color';
-    document.getElementById('current-color-box').setAttribute('style',`background:${customColor}`);
+
+    document.getElementById('current-color-box').setAttribute('style', `background:${customColor}`);
     document.getElementById('current-color-box').className = currentColor;
   })
 
-  //grid toggle
+  //grid toggle (not working yet...)
   // const gridToggle = document.getElementById('grid-toggle');
   // gridToggle.addEventListener('change', () => {
   //   console.log('h');
