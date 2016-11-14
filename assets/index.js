@@ -127,4 +127,21 @@
     document.getElementById('current-color-box').setAttribute('style',`background:${customColor}`);
     document.getElementById('current-color-box').className = currentColor;
   })
+
+  //grid toggle
+  // const gridToggle = document.getElementById('grid-toggle');
+  // gridToggle.addEventListener('change', () => {
+  //   console.log('h');
+  //   if (!event.target.checked){
+  //     console.log('e');
+  //     for (const cell in [...document.getElementsByClassName('cellbase')]){
+  //       cell.className = 'cellbase-gridless ' + cell.className;
+  //       console.log('o');
+  //     }
+  //   } else {
+  //     for (const cell in [...document.getElementsByClassName('cellbase')]){
+  //       cell.className.toggle('cellbase-gridless');
+  //     }
+  //   }
+  // })
 })();

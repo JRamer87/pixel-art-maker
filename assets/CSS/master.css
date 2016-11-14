@@ -129,14 +129,14 @@ form {
 	align-items: center;
 	justify-content: center;
 }
-label {
+main label {
 	color: #5d5d5d;
   font: 700 24px/36px 'Bitter',times,serif;
 	padding: 0 5px;
 }
 input {
 	margin: 0 5px;
-	width: 70px;
+	width: 75px;
 }
 /*grid*/
 #grid {
@@ -158,6 +158,9 @@ input {
   border: .5px dotted grey;
 	position: relative;
   background: transparent;
+}
+.cellbase-gridless{
+
 }
 .small-cell{
 	width: 15px;
@@ -264,11 +267,15 @@ input {
 	height: 30px;
 	border: 2px solid #1f1f1f;
 }
-.low-bar-content p{
+.low-bar-content p,
+.low-bar-content label{
 	margin: 10px;
 	padding: 0;
 	color:#1f1f1f;
 	font: 700 16px/24px 'Bitter',times,serif;
+}
+#grid-toggle{
+	width: 10px;
 }
 
 /*footer*/

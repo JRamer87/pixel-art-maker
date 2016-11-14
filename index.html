@@ -22,9 +22,9 @@
         <li>Press ALT/OPTION to apply <u>overlay blending</u> of colors.</li>
       </ul>
       <div id="grid-reset-form">
-        <label>Columns: </label>
+        <label for="grid-x">Columns: </label>
         <input type="number" id="grid-x" placeholder="(max: 60)">
-        <label>Rows: </label>
+        <label for="grid-y">Rows: </label>
         <input type="number" id="grid-y" placeholder="(max: 100)">
         <button id="grid-setup">Reset Grid</button>
       </div>
@@ -54,8 +54,12 @@
           <p>Custom color:</p>
           <input id="color-input" type="color">
         </div>
+        <!-- <div class="low-bar-content">
+          <input type="checkbox" id="grid-toggle" checked>
+          <label for="grid-toggle">Toggle grid</label>
+        </div> -->
         <div class="low-bar-content">
-          <p>Current Color:</p>
+          <p>Current color:</p>
           <div id="current-color-box" class="box">
           </div>
         </div>
