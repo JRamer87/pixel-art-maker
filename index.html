@@ -14,23 +14,23 @@
     </header>
     <main class="container">
       <ul class="instructions">
-        Instructions: Please enter the number of columns and rows, then <u>click</u> Reset Grid to generate the grid.
+        <li>Instructions: Please enter the number of columns and rows, then <u>click</u> Reset Grid to generate the grid.</li>
         <li>Click on a color from the palette below, or click on the custom color box to pick out a color.</li>
         <li>When ready, place the color in the grid by clicking on the target area. </li>
         <li>(Tip: you can cover multiple cells by clicking and dragging over the desired area.)</li>
         <li>Press SHIFT and click to <u>undo</u>.</li>
         <li>Press ALT/OPTION to apply <u>overlay blending</u> of colors.</li>
       </ul>
-      <section id="grid-reset-form">
-        <label for="">Columns: </label>
+      <div id="grid-reset-form">
+        <label>Columns: </label>
         <input type="number" id="grid-x" placeholder="(max: 60)">
-        <label for="">Rows: </label>
-        <input type="number" id="grid-y" placeholder="(max: 60)">
+        <label>Rows: </label>
+        <input type="number" id="grid-y" placeholder="(max: 100)">
         <button id="grid-setup">Reset Grid</button>
-      </section>
-      <section id="grid">
-      </section>
-      <section id="palette" class="bar">
+      </div>
+      <div id="grid">
+      </div>
+      <div id="palette" class="bar">
         <div class="palette-color red"></div>
         <div class="palette-color orangered"></div>
         <div class="palette-color orange"></div>
@@ -48,8 +48,8 @@
         <div class="palette-color white"></div>
         <div class="palette-color grey"></div>
         <div class="palette-color black"></div>
-      </section>
-      <section class="bar low-bar">
+      </div>
+      <div class="bar low-bar">
         <div class="low-bar-content">
           <p>Custom color:</p>
           <input id="color-input" type="color">
@@ -59,7 +59,7 @@
           <div id="current-color-box" class="box">
           </div>
         </div>
-      </section>
+      </div>
     </main>
     <div id="brush"></div>
     <footer class="container">

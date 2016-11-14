@@ -41,6 +41,7 @@ Due: Nov. 14, 2016
 ###### progress:
 * add cursor displays of current color
 * attempt reconstructing div structure to ensure append occurs in appropriate place
+
 ###### TODO:
 - drag
 - custom color

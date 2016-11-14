@@ -2,28 +2,28 @@
 (function() {
   'use strict';
 
-  const resetForm = document.getElementById('grid-reset-form')
-  const resetButton = document.getElementById('grid-setup')
-  const grid = document.getElementById('grid')
-  const formY = document.getElementById('grid-y')
-  const formX = document.getElementById('grid-x')
+  const resetForm = document.getElementById('grid-reset-form');
+  const resetButton = document.getElementById('grid-setup');
+  const grid = document.getElementById('grid');
+  const formY = document.getElementById('grid-y');
+  const formX = document.getElementById('grid-x');
   resetButton.addEventListener('click', () => {
     while (grid.children.length) {
-      grid.removeChild(grid.firstElementChild)
+      grid.removeChild(grid.firstElementChild);
     }
-    const widthCell = 99 / formX.value
+    const widthCell = 99 / formX.value;
     for (let i = 0; i < formY.value; i++) {
       const newRow = document.createElement('div');
-      newRow.className = 'grid-row'
+      newRow.className = 'grid-row';
       for (let i = 0; i < formX.value; i++) {
-        const newCell = document.createElement('div')
+        const newCell = document.createElement('div');
         if (formX.value > 30) {
-          newCell.className ='small-cell '
+          newCell.className ='small-cell ';
         }
-        newCell.className += 'cellbase top-layer'
-        newRow.appendChild(newCell)
+        newCell.className += 'cellbase top-layer';
+        newRow.appendChild(newCell);
       }
-      grid.appendChild(newRow)
+      grid.appendChild(newRow);
     }
   })
 })();
@@ -31,9 +31,8 @@
 //everything else
 (function() {
   'use strict';
-  const palette = document.getElementById('palette')
-  const grid = document.getElementById('grid')
-
+  const palette = document.getElementById('palette');
+  const grid = document.getElementById('grid');
 
   // pick color, save as ext. variable
   let currentColor;
@@ -42,25 +41,25 @@
       return;
     }
     currentColor = event.target.classList[1];
-    document.getElementById('current-color-box').removeAttribute('style')
+    document.getElementById('current-color-box').removeAttribute('style');
     document.getElementById('current-color-box').className = currentColor;
   })
 
   // function: appends/removes a layer of color
   const addColorLayer = function () {
     if (!event.target.className.includes('top-layer')){
-      return
+      return;
     }
     if (currentColor === undefined) {
-      return
+      return;
     }
     if (event.shiftKey) {
       if(event.target.className.includes('cellbase')){
-        return
+        return;
       }
-      event.target.parentElement.className += ' top-layer'
+      event.target.parentElement.className += ' top-layer';
       event.target.parentElement.removeChild(event.target);
-      return
+      return;
     }
 
     const newCell = document.createElement('div');
@@ -71,7 +70,7 @@
     newCell.className += ' top-layer';
     event.target.className = event.target.className.slice(0, event.target.className.length - 10);
     if (newCell.className.includes('custom-color')){
-      newCell.setAttribute('style',`background:${customColor}`)
+      newCell.setAttribute('style',`background:${customColor}`);
     }
     event.target.appendChild(newCell);
   }
@@ -81,12 +80,12 @@
     if (event.target === grid || event.target.className.includes('grid-row')) {
       return;
     }
-    addColorLayer()
+    addColorLayer();
   })
 
   // drag to draw w/mouseenter
   let mouseisdown = false;
-  let topLayerArr = [...document.getElementsByClassName('top-layer')]
+  let topLayerArr = [...document.getElementsByClassName('top-layer')];
   const reinitializeEnterArr = function () {
     for (const cell of topLayerArr){
       cell.addEventListener('mouseenter', () => {
@@ -102,7 +101,7 @@
   })
   document.addEventListener('mouseup', () => {
     mouseisdown = false;
-    topLayerArr = [...document.getElementsByClassName('top-layer')]
+    topLayerArr = [...document.getElementsByClassName('top-layer')];
     reinitializeEnterArr();
   })
 
@@ -112,7 +111,7 @@
     event.shiftKey ? brush.className = 'transparent' : brush.className = currentColor;
     currentColor === 'custom-color' ? brush.setAttribute('style',`display:block;left:${event.x}px;top:${event.y}px;background:${customColor}`) : brush.setAttribute('style',`display:block;left:${event.x}px;top:${event.y}px`);
     if (currentColor !== undefined){
-      grid.setAttribute('style','cursor:none')
+      grid.setAttribute('style','cursor:none');
     }
   })
   grid.addEventListener('mouseleave',() => {
@@ -128,5 +127,4 @@
     document.getElementById('current-color-box').setAttribute('style',`background:${customColor}`);
     document.getElementById('current-color-box').className = currentColor;
   })
-
 })();
