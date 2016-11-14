@@ -11,7 +11,15 @@ A pixel art maker written with HTML5, CSS3 and native JavaScript (ES6).
 
 #### Description
 
-This site incorporates a simple pixel art maker. Available additional functionalities include undo, blending ...
+This site incorporates a simple pixel art maker. Features include:
+- Ability to configure size of grid
+- Custom colors
+- Drawing on multiple cells by dragging
+- Cursor that reflects the current color
+- 'Undo' by pressing shift
+- Overlay blending by pressing alt
+
+Because of limitations involved in using native JS to accomplish these tasks, the site may require more resource than otherwise necessary.
 
 #### Timeline
 Started: Nov. 11, 2016
@@ -42,3 +50,5 @@ Due: Nov. 14, 2016
 * 'drag to draw' enabled
 * restructure div class to specify behavior
 * custom color enabled
+* grid sizing by user input enabled
+* grid resizes depending on number of cells requested.

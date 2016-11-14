@@ -101,6 +101,9 @@ small{
   color: #5d5d5d;
   font: 400 12px/18px 'Bitter',times,serif;
 }
+u {
+	text-decoration: underline;
+}
 /*banner*/
 .banner h1,
 .banner h3{
@@ -110,9 +113,15 @@ small{
 main {
   text-align: center;
 }
-.instructions {
-  width: 80%;
+.instructions{
+  width: 90%;
   margin: 5px auto;
+	color: #1f1f1f;
+  font: 400 16px/24px 'Bitter',times,serif;
+	background: #c4c4c4;
+	text-align: right;
+	padding: 15px;
+	border-radius: 15px;
 }
 /*form*/
 form {
@@ -261,9 +270,11 @@ input {
 
 /*footer*/
 footer{
-  padding: 5px 30px;
+  padding: 5px 50px;
 }
-
+footer p{
+	font: 400 12px/18px 'Bitter',times,serif;
+}
 /*brush*/
 #brush {
 	height: 15px;
