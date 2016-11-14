@@ -19,7 +19,7 @@ This site incorporates a simple pixel art maker. Features include:
 - 'Undo' by pressing shift
 - Overlay blending by pressing alt
 
-Because of limitations involved in using native JS to accomplish these tasks, the site may require more resource than otherwise necessary.
+Instead of recycling/resetting style attributes of the div elements used in the grid, this site creates and appends layers of colors and nests them within the div structures. While this has the side effect of increased resources required to run the site, it is necessary for the 'undo' feature since the html structure will contain data of all the layers that has previously been applied to each cell. I anticipate that this can be simplified with better ways to store and recall data than the current method. Similarly, because of limitations involved in using native JS to accomplish these tasks, the site may require more resource than otherwise necessary.
 
 #### Timeline
 Started: Nov. 11, 2016
