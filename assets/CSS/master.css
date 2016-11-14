@@ -175,10 +175,11 @@ input {
 
 /*palette & standard colors*/
 .bar{
-  width: 80%;
+  width: 90%;
   margin: 5px auto;
   display: flex;
   flex-flow: row wrap;
+	justify-content: center;
 	align-items: center;
 }
 .palette-color{
@@ -250,9 +251,11 @@ input {
 /*bar under palette*/
 .low-bar {
 	justify-content: space-between;
+	background: #c4c4c4;
+	border-radius: 15px;
 }
 .low-bar-content {
-	width: 200px;
+	width: 220px;
 	display: flex;
 	align-items: center;
 }
@@ -265,7 +268,7 @@ input {
 	margin: 10px;
 	padding: 0;
 	color:#1f1f1f;
-	font: 700 12px/18px 'Bitter',times,serif;
+	font: 700 16px/24px 'Bitter',times,serif;
 }
 
 /*footer*/
