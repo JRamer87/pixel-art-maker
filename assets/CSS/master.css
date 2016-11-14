@@ -141,11 +141,13 @@ main p {
   width: 100%;
   height: 100%;
   border: 0;
-  z-index: 1;
+}
+.top-layer {
+	z-index: 1;
 }
 
 /*palette & standard colors*/
-#palette{
+.bar{
   width: 80%;
   margin: 5px auto;
   display: flex;
@@ -214,8 +216,19 @@ main p {
 }
 
 .blend-mode{
-  /*opacity: .5;*/
+	z-index: 1;
   mix-blend-mode: overlay;
+}
+.low-bar div{
+	width: 40px;
+	height: 40px;
+	border: 2px solid #1f1f1f;
+}
+.low-bar p{
+	width: 120;
+	background-blend-mode: difference;
+	color:#1f1f1f;
+	font: 700 12px/18px 'Bitter',times,serif;
 }
 
 /*footer*/
@@ -229,4 +242,6 @@ footer{
 	width: 15px;
 	border-radius: 50%;
 	display: none;
+	position: fixed;
+	z-index: 2
 }

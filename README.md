@@ -20,3 +20,16 @@ This site incorporates a simple pixel art maker. Available additional functional
 ###### TODO:
  - drag capability (bonus 1)
  - custom color (bonus 2)
+
+##### Day 2
+###### progress:
+* add cursor displays of current color
+* attempt reconstructing div structure to ensure append occurs in appropriate place
+###### TODO:
+- drag
+- custom color
+
+##### Day 3
+###### progress:
+* enable drag
+* restructure div class to specify behavior
