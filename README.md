@@ -31,5 +31,6 @@ This site incorporates a simple pixel art maker. Available additional functional
 
 ##### Day 3
 ###### progress:
-* enable drag
+* 'drag to draw' enabled
 * restructure div class to specify behavior
+* custom color enabled

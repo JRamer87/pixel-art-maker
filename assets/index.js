@@ -54,10 +54,13 @@
     const newCell = document.createElement('div');
     newCell.className ='color-layer '+currentColor;
     if (event.altKey) {
-      newCell.className += ' blend-mode'
+      newCell.className += ' blend-mode';
     }
-    newCell.className += ' top-layer'
-    event.target.className = event.target.className.slice(0,event.target.className.length-10)
+    newCell.className += ' top-layer';
+    event.target.className = event.target.className.slice(0, event.target.className.length - 10);
+    if (newCell.className.includes('custom-color')){
+      newCell.setAttribute('style',`background:${customColor}`)
+    }
     event.target.appendChild(newCell);
   }
 
@@ -95,7 +98,7 @@
   const brush = document.getElementById('brush')
   grid.addEventListener('mousemove', () => {
     event.shiftKey ? brush.className = 'transparent' : brush.className = currentColor;
-    brush.setAttribute('style',`display:block;left:${event.x}px;top:${event.y}px`);
+    currentColor === 'custom-color' ? brush.setAttribute('style',`display:block;left:${event.x}px;top:${event.y}px;background:${customColor}`) : brush.setAttribute('style',`display:block;left:${event.x}px;top:${event.y}px`);
     if (currentColor !== undefined){
       grid.setAttribute('style','cursor:none')
     }
@@ -103,4 +106,15 @@
   grid.addEventListener('mouseleave',() => {
     brush.removeAttribute('style');
   })
+
+  //custom color
+  let customColor;
+  const colorInput = document.getElementById('color-input');
+  colorInput.addEventListener('change', () => {
+    customColor = colorInput.value;
+    currentColor = 'custom-color'
+    console.log(customColor);
+    console.log(colorInput.value);
+  })
+
 })();
