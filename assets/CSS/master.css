@@ -110,17 +110,31 @@ small{
 main {
   text-align: center;
 }
-main p {
+.instructions {
   width: 80%;
   margin: 5px auto;
 }
+/*form*/
+form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+label {
+	color: #5d5d5d;
+  font: 700 24px/36px 'Bitter',times,serif;
+	padding: 0 5px;
+}
+input {
+	margin: 0 5px;
+	width: 70px;
+}
 /*grid*/
 #grid {
-  width: 900px;
-  margin: 5px auto;
+  width: 100%;
+  margin: 20px auto;
   display: flex;
   flex-flow: column;
-  border: 1px solid black;
   align-items: center;
 }
 .grid-row{
@@ -135,6 +149,10 @@ main p {
   border: .5px dotted grey;
 	position: relative;
   background: transparent;
+}
+.small-cell{
+	width: 15px;
+	height: 15px;
 }
 .color-layer {
   display: block;
@@ -220,16 +238,23 @@ main p {
 	z-index: 1;
   mix-blend-mode: overlay;
 }
-.low-bar div{
-	width: 40px;
-	height: 40px;
+/*bar under palette*/
+.low-bar {
+	justify-content: space-between;
+}
+.low-bar-content {
+	width: 200px;
+	display: flex;
+	align-items: center;
+}
+.low-bar-content div{
+	width: 30px;
+	height: 30px;
 	border: 2px solid #1f1f1f;
 }
-.low-bar p{
-	width: 120px;
-	margin: 0;
+.low-bar-content p{
+	margin: 10px;
 	padding: 0;
-	background-blend-mode: difference;
 	color:#1f1f1f;
 	font: 700 12px/18px 'Bitter',times,serif;
 }

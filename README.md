@@ -1,14 +1,22 @@
 # Pixel Art Maker
 by Brian Lee
 
-#### Timeline
-Started: Nov. 11, 2016
+A pixel art maker written with HTML5, CSS3 and native JavaScript (ES6).
 
-Due: Nov. 14, 2016
+### Table of Contents
+- Description
+- Timeline
+- Daily Log
+
 
 #### Description
 
 This site incorporates a simple pixel art maker. Available additional functionalities include undo, blending ...
+
+#### Timeline
+Started: Nov. 11, 2016
+
+Due: Nov. 14, 2016
 
 #### Daily log
 ##### Day 1

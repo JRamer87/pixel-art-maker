@@ -1,23 +1,34 @@
-// TODO: function to initialize grid with size input
-
 // initializing grid structure
 (function() {
   'use strict';
-  const gridRows = [...document.getElementsByClassName('grid-row')]
 
-  const initializeGrid = function () {
-    for (const row of gridRows){
-      const rowArr=[...row.children]
-      for (const cell of rowArr){
-        cell.className+='cellbase top-layer'
-      }
+  const resetForm = document.getElementById('grid-reset-form')
+  const resetButton = document.getElementById('grid-setup')
+  const grid = document.getElementById('grid')
+  const formY = document.getElementById('grid-y')
+  const formX = document.getElementById('grid-x')
+  resetButton.addEventListener('click', () => {
+    while (grid.children.length) {
+      grid.removeChild(grid.firstElementChild)
     }
-  }
-  initializeGrid();
-
+    const widthCell = 99 / formX.value
+    for (let i = 0; i < formY.value; i++) {
+      const newRow = document.createElement('div');
+      newRow.className = 'grid-row'
+      for (let i = 0; i < formX.value; i++) {
+        const newCell = document.createElement('div')
+        if (formX.value > 30) {
+          newCell.className ='small-cell '
+        }
+        newCell.className += 'cellbase top-layer'
+        newRow.appendChild(newCell)
+      }
+      grid.appendChild(newRow)
+    }
+  })
 })();
 
-
+//everything else
 (function() {
   'use strict';
   const palette = document.getElementById('palette')
@@ -31,6 +42,7 @@
       return;
     }
     currentColor = event.target.classList[1];
+    document.getElementById('current-color-box').removeAttribute('style')
     document.getElementById('current-color-box').className = currentColor;
   })
 
@@ -112,9 +124,9 @@
   const colorInput = document.getElementById('color-input');
   colorInput.addEventListener('change', () => {
     customColor = colorInput.value;
-    currentColor = 'custom-color'
-    console.log(customColor);
-    console.log(colorInput.value);
+    currentColor = 'custom-color';
+    document.getElementById('current-color-box').setAttribute('style',`background:${customColor}`);
+    document.getElementById('current-color-box').className = currentColor;
   })
 
 })();
