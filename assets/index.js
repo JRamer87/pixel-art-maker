@@ -136,6 +136,10 @@
       brush.setAttribute('style', `display:block; left:${event.x}px; top:${event.y}px`);
     }
 
+    if (event.altKey) {
+      brush.className += ' blend-mode'
+    }
+
     if (currentColor !== undefined) {
       grid.setAttribute('style', 'cursor:none');
     }
