@@ -37,6 +37,8 @@
     }
 
     gridSetup(formX, formY);
+    formY.value = '';
+    formX.value = '';
   });
 
   const palette = document.getElementById('palette');
