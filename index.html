@@ -13,21 +13,23 @@
       <h3>Make your very own pixel art!</h3>
     </header>
     <main class="container">
-      <ul class="instructions">
-        <li>Instructions: Please enter the number of columns and rows, then <u>click</u> Reset Grid to generate the grid.</li>
-        <li>Click on a color from the palette below, or click on the custom color box to pick out a color.</li>
-        <li>When ready, place the color in the grid by clicking on the target area. </li>
-        <li>(Tip: you can cover multiple cells by clicking and dragging over the desired area.)</li>
-        <li>Press SHIFT and click to <u>undo</u>.</li>
-        <li>Press ALT/OPTION to apply <u>overlay blending</u> of colors.</li>
-      </ul>
-      <div id="grid-reset-form">
-        <label for="grid-x">Columns: </label>
-        <input type="number" id="grid-x" placeholder="(max: 60)">
-        <label for="grid-y">Rows: </label>
-        <input type="number" id="grid-y" placeholder="(max: 100)">
-        <button id="grid-setup">Reset Grid</button>
+      <div class="instructions">
+        <h5>Instructions</h5>
+        <ol>
+          <li>Please enter the number of columns and rows to generate the grid.</li>
+          <li>Click on a color from the palette below, or click on the custom color box to pick out a color.</li>
+          <li>When ready, place the color in the grid by clicking on the target area. <br>(Tip: you can cover multiple cells by clicking and dragging over the desired area.)</li>
+          <li>Press SHIFT and click to <u>undo</u>.</li>
+          <li>Press ALT/OPTION to apply <u>overlay blending</u> of colors.</li>
+        </ol>
       </div>
+      <form id="grid-reset-form">
+        <label for="grid-x">Columns: </label>
+        <input type="number" id="grid-x" name="grid-x" placeholder="(max: 60)">
+        <label for="grid-y">Rows: </label>
+        <input type="number" id="grid-y" name="grid-y" placeholder="(max: 100)">
+        <button type="submit" id="grid-setup">Reset Grid</button>
+      </form>
       <div id="grid">
       </div>
       <div id="palette" class="bar">
@@ -54,10 +56,10 @@
           <p>Custom color:</p>
           <input id="color-input" type="color">
         </div>
-        <!-- <div class="low-bar-content">
+        <div class="low-bar-content">
           <input type="checkbox" id="grid-toggle" checked>
           <label for="grid-toggle">Toggle grid</label>
-        </div> -->
+        </div>
         <div class="low-bar-content">
           <p>Current color:</p>
           <div id="current-color-box" class="box">
