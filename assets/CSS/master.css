@@ -122,13 +122,13 @@ main {
 	background: #c4c4c4;
 	text-align: center;
 	border-radius: 15px;
+	width: 90%;
+	padding: 15px;
 }
 .instructions ol{
 	list-style: decimal inside;
-  width: 90%;
 	color: #1f1f1f;
   font: 400 16px/24px 'Bitter',times,serif;
-	padding: 15px;
 }
 .instructions h5{
 	margin-bottom: 10px;
