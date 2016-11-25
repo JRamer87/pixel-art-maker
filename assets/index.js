@@ -146,7 +146,6 @@
   reinitializeEnterArr();
 
   //  boolean for whether mouse is up/down
-
   grid.addEventListener('mousedown', () => {
     mouseIsDown = true;
   });

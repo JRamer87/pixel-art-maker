@@ -117,19 +117,20 @@ u {
 main {
   text-align: center;
 }
+.instructions {
+	margin: 5px auto;
+	background: #c4c4c4;
+	text-align: center;
+	border-radius: 15px;
+}
 .instructions ol{
 	list-style: decimal inside;
   width: 90%;
-  margin: 5px auto;
 	color: #1f1f1f;
   font: 400 16px/24px 'Bitter',times,serif;
-	background: #c4c4c4;
-	text-align: center;
 	padding: 15px;
-	border-radius: 15px;
 }
 .instructions h5{
-	text-align: center;
 	margin-bottom: 10px;
 }
 /*form*/
