@@ -7,12 +7,12 @@ body {
 }
 
 .appStyle {
-  width: 1000px;
-  height: 600px;
-  max-width: 1000px;
+  width: auto;
+  height: 550px;
+  /*max-width: 1000px;
   max-height: 600px;
   min-width: 1000px;
-  min-height: 600px;
+  min-height: 600px;*/
   border: 2px solid black;
   margin: auto;
   border-radius: 10px;
